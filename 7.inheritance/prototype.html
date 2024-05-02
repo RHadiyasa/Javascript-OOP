@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class adalah bentuk cetakan dari object.
+      // cara membuat class
+
+      class User {
+        // pembuatan nama class biasanya diawali huruf kapital -> PascalCase
+        firstName;
+        lastName;
+        username; // bisa tidak dituliskan
+        age;
+
+        constructor(inputUsername, inputAge, inputFirstName, inputLastName) {
+          this.username = inputUsername;
+          this.age = inputAge;
+          this.firstName = inputFirstName;
+          this.lastName = inputLastName;
+        }
+
+        #getFullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+
+        introduction() {
+          return `Halo! Nama saya ${this.#getFullName()}, umur saya ${
+            this.age
+          } saya biasa dipanggil ${this.username}`;
+        }
+      }
+
+      // Inheritance Admin dari Users
+      class Admin extends User {
+        division;
+
+        constructor(
+          inputUsername,
+          inputAge,
+          inputFirstName,
+          inputLastName,
+          inputDivision
+        ) {
+          super(inputUsername, inputAge, inputFirstName, inputLastName); // Super harus di paling atas sebelum properti yang lainnya
+          this.division = inputDivision;
+        }
+
+        // OVERRIDING METHOD
+        introduction() {
+          return `Halo! Nama saya ${this.firstName} ${this.lastName}, umur saya ${this.age} saya biasa dipanggil ${this.username}. Saya bekerja di divisi ${this.division}`;
+        }
+      }
+
+      const user1 = new Admin("Apih", 25, "Rafi", "Hadiyasa", "Developer");
+      const user2 = new User("Ami", 19, "Rahma", "Haifah");
+      console.log(user1);
+      console.log(user1.introduction());
+      console.log(user2);
+      console.log(user2.introduction());
+    </script>
+  </body>
+</html>
