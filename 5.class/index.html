@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        carName;
+        brand;
+        #owner;
+        #engineNumber; // private -> cuma bisa diakses di dalam class
+
+        constructor(carName, brand, owner, engineNumber) {
+          this.carName = carName;
+          this.brand = brand;
+          this.#owner = owner;
+          this.#engineNumber = engineNumber;
+        }
+
+        getEngineNumber() {
+          return this.#engineNumber;
+        }
+
+        setOwner() {}
+
+        #getOwner() {
+          // #private class
+          return this.#owner;
+        }
+
+        sayHello() {
+          return `Halo Customer ${this.#getOwner()}`;
+        }
+      }
+
+      const yaris = new Car("Yaris", "Toyota", "Mirza", 123);
+      console.log(yaris);
+      console.log(yaris.sayHello());
+      console.log(
+        `Nama Mobil ${yaris.brand} ${
+          yaris.carName
+        }, ${yaris.sayHello()}, Nomor Mesin : ${yaris.getEngineNumber()}`
+      );
+    </script>
+  </body>
+</html>

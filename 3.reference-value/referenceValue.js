@@ -12,6 +12,7 @@ console.log(age);
 const miya = {
   username: "Miya",
   damage: 2000,
+  role: "Marksman"
 };
 
 const layla = miya;

@@ -15,7 +15,7 @@ class Users {
     this.lastName = inputLastName;
   }
 
-  #getFullName() {
+  #getFullName() { // private method
     return `${this.firstName} ${this.lastName}`;
   }
 

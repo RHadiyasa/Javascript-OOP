@@ -29,7 +29,7 @@ console.log(`Street : ${street} | City : ${city}`);
 
 // Destructuring Array
 console.log("\n-----DESTRUCTURING ARRAY-----");
-const fruits = ["Leci", "Jeruk", "Mangga"];
+const fruits = ["Leci", "Jeruk", "Mangga", "Buah"];
 
 const favFruit = fruits[1];
 console.log(favFruit);
@@ -38,5 +38,5 @@ const [buah1, buah2, buah3] = fruits;
 console.log(buah1);
 
 // Kita bisa mengambil satu nilai saja di dalam array
-const [firstFruit, ...restOfFruit] = fruits; // notasi ... hanya bisa digunakan terkahir, tidak bisa digunakan di depan
-console.log(firstFruit, restOfFruit);
+const [firstFruit, second, ...restOfFruit] = fruits; // notasi ... hanya bisa digunakan terkahir, tidak bisa digunakan di depan
+console.log(firstFruit, second, restOfFruit);
